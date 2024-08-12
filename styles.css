@@ -1,0 +1,384 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out; /* Animación de desvanecimiento */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Se desplaza hacia abajo */
+  }
+  100% {
+    opacity: 1; /* Termina visible */
+    transform: translateY(0); /* Regresa a su posición original */
+  }
+}
+
+.scene {
+    height: 100%;
+    background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+    position: relative;
+    overflow: hidden;
+}
+
+.sun {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #FFD700;
+    animation: sun-glow 5s infinite alternate;
+}
+
+.sky {
+    height: 70%;
+    position: relative;
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    animation: float 30s infinite linear;
+    opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud1 {
+    width: 100px;
+    height: 40px;
+    top: 20%;
+    left: -100px;
+}
+
+.cloud1::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+}
+
+.cloud1::after {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    right: 10px;
+}
+
+.cloud2 {
+    width: 140px;
+    height: 60px;
+    top: 40%;
+    left: -140px;
+    animation-delay: -10s;
+}
+
+.cloud2::before {
+    width: 70px;
+    height: 70px;
+    top: -35px;
+    left: 15px;
+}
+
+.cloud2::after {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: 15px;
+}
+
+.cloud3 {
+    width: 120px;
+    height: 50px;
+    top: 30%;
+    left: -120px;
+    animation-delay: -20s;
+}
+
+.cloud3::before {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 12px;
+}
+
+.cloud3::after {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    right: 12px;
+}
+
+.bird {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: 
+        radial-gradient(circle at 10px 5px, black 1px, transparent 1px),
+        radial-gradient(circle at 14px 5px, black 1px, transparent 1px);
+    border-radius: 50% 50% 0 0;
+    animation: fly 15s infinite linear;
+}
+
+.bird1 {
+    top: 15%;
+    left: -20px;
+}
+
+.bird2 {
+    top: 25%;
+    left: -20px;
+    animation-delay: -7s;
+}
+
+.house {
+    width: 200px;
+    height: 140px;
+    background: #FFFACD; /* Color de fondo */
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    overflow: visible;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para profundidad */
+    border-radius: 10px; /* Esquinas redondeadas */
+}
+
+.roof {
+    position: absolute;
+    top: -60px;
+    left: -10px;
+    width: 220px;
+    height: 60px;
+    background: #FF0000; /* Color del techo */
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    z-index: 3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra del techo */
+}
+
+.window {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #ADD8E6;
+    border: 4px solid #FFFFFF;
+}
+
+.window1 {
+    top: 30px;
+    left: 30px;
+}
+
+.window2 {
+    top: 30px;
+    right: 30px;
+}
+
+.door {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 60px;
+    background: #8B4513;
+}
+
+.ground {
+    height: 30%;
+    background: #228B22;
+    position: relative;
+    overflow: hidden;
+}
+
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: 
+        linear-gradient(to top, #228B22, transparent 80%),
+        repeating-linear-gradient(45deg, #228B22, #228B22 5px, #32CD32 5px, #32CD32 10px);
+}
+
+.flower {
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 100px;
+    animation: sway 3s ease-in-out infinite alternate;
+}
+
+.stem {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to top, #228B22, #32CD32);
+    transform: translateX(-50%);
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: #FFD700;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.petal {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #FF69B4, #FF1493);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform-origin: center bottom;
+    animation: petal-sway 3s ease-in-out infinite alternate;
+}
+
+.petal1 { transform: translateX(-50%) rotate(-72deg); }
+.petal2 { transform: translateX(-50%) rotate(-36deg); }
+.petal3 { transform: translateX(-50%) rotate(0deg); }
+.petal4 { transform: translateX(-50%) rotate(36deg); }
+.petal5 { transform: translateX(-50%) rotate(72deg); }
+
+.flower1 { left: 10%; animation-delay: -0.5s; }
+.flower2 { left: 50%; animation-delay: -1s; }
+.flower3 { right: 10%; animation-delay: -1.5s; }
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@keyframes petal-sway {
+    0%, 100% { transform: translateX(-50%) rotate(var(--rotate)) scale(1); }
+    50% { transform: translateX(-50%) rotate(calc(var(--rotate) + 5deg)) scale(1.1); }
+}
+
+/* Asignar valores de rotación a cada pétalo */
+.petal1 { --rotate: -72deg; }
+.petal2 { --rotate: -36deg; }
+.petal3 { --rotate: 0deg; }
+.petal4 { --rotate: 36deg; }
+.petal5 { --rotate: 72deg; }
+
+@keyframes float {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100vw); }
+}
+
+@keyframes fly {
+    from { transform: translateX(-100%) translateY(sin(0deg) * 20px); }
+    to { transform: translateX(100vw) translateY(sin(3600deg) * 20px); }
+}
+
+@keyframes sun-glow {
+    from { box-shadow: 0 0 50px #FFD700; }
+    to { box-shadow: 0 0 100px #FFD700; }
+}
+
+@keyframes appear {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes colorChange {
+  0% { color: #ff69b4; }
+  25% { color: #ff6347; }
+  50% { color: #ffd700; }
+  75% { color: #00ced1; }
+  100% { color: #ff69b4; }
+}
+
+.birthday-message {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Arial', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  white-space: normal;
+  z-index: 1000;
+  animation: colorChange 5s linear infinite;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+  border: 2px solid #ff69b4; /* Borde más estilizado */
+  border-radius: 12px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  max-width: 80%;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.aprete-button {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1001;
+  animation: appear 0.5s forwards;
+  animation-delay: 3s;
+}
+
+@keyframes appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 600px) {
+  .birthday-message {
+    font-size: 24px;
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .scene {
+    height: 100vh;
+  }
+
+  .house {
+    width: 150px;
+    height: 105px;
+  }
+
+  .roof {
+    width: 165px;
+    height: 45px;
+    top: -45px;
+  }
+}
